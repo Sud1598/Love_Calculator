@@ -20,6 +20,7 @@
 <p>
 <label for="yn"> Your Name:</label>
 <form:input   id="yn" path="username"/>
+<form:errors path="username"/>
 </p>
 
 <p>

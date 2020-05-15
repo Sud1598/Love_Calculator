@@ -7,6 +7,25 @@
 
 <meta charset="ISO-8859-1">
 <title>homepage</title>
+
+<script type="text/javascript">
+
+function validation(){
+	
+	var userName=document.geElementById("yn").value;
+	
+	if (userName.length<1) {
+		
+		alert("your Name should have atleast 1 char");
+		return false;
+	} else {
+
+		return true; 
+	}
+}
+
+
+</script>
 </head>
 
 
@@ -20,6 +39,7 @@
 <p>
 <label for="yn"> Your Name:</label>
 <form:input   id="yn" path="username"/>
+<form:errors path="username"/>
 </p>
 
 <p>
