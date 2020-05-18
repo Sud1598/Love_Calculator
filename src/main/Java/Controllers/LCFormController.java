@@ -35,14 +35,15 @@ public class LCFormController {
 				
 				System.out.println(temp);
 				
-			}
+			} 
 			
 			return "Homepage";
 			
 		}
 		
 		else {
-		return "resultPage";}
+		return "resultPage";
+		}
 	}
 	
 	

@@ -8,17 +8,31 @@
 <meta charset="ISO-8859-1">
 <title>homepage</title>
 
+<style type="text/css">
+
+.error{
+color: red;
+position: fixed;
+text-align:left;
+margin-left:2;
+
+}
+
+
+</style>
+
 <script type="text/javascript">
 
 function validation(){
 	
-	var userName=document.geElementById("yn").value;
+	var userName=document.getElementById("yn").value;
 	
-	if (userName.length<1) {
+	if (userName.length<2 || userName.length>10) {
 		
-		alert("your Name should have atleast 1 char");
+		alert("your Name should have atleast 2 gchar and max 10 char Client side");
 		return false;
-	} else {
+	}
+	else {
 
 		return true; 
 	}
@@ -33,18 +47,25 @@ function validation(){
 <body>
 <h1 align="center">LOVE CALCULATOR</h1>
 <hr>
-<form:form action="process-homepage" method="get" modelAttribute="userinfo">
+<form:form action="process-homepage" method="get" modelAttribute="userinfo" >
 
 <div align="center">
 <p>
 <label for="yn"> Your Name:</label>
 <form:input   id="yn" path="username"/>
-<form:errors path="username"/>
+<form:errors path="username" cssClass="error"/>
 </p>
 
 <p>
 <label for="cn"> Crush Name:</label>
 <form:input   id="cn" path="crushname"/>
+<form:errors path="crushname" cssClass="error"/>
+</p>
+<p>
+
+<form:checkbox   path="termAndConditionAccepted"/>
+<label> I Am Accepting that this is for Fun purpose</label>
+<form:errors path="termAndConditionAccepted" cssClass="error"/>
 </p>
 
 <p>
